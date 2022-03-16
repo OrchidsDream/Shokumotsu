@@ -10,25 +10,6 @@ body {
 }
 
 header{
-<<<<<<< HEAD
-    background-image: url(assets\ /food.jpeg);
-    background-color: white;
-    background-size: cover;
-    height: 200px;
-}
-
-h1 {
-    margin: 0;
-}
-
-form {
-    background-color: rgb(241, 241, 241);
-    width: 80vw;
-    height: 500px;
-    border-radius: 10px;
-    margin: 30px auto;
-}
-=======
 background-image: url(assets\ /food.jpeg);
 background-size: cover;
 width: 100%;
@@ -40,4 +21,3 @@ h1{
   text-align: center;
 }
 
->>>>>>> 1a3242391fbd3011ff04c14aa45dbee839156f22
