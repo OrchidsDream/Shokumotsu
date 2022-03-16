@@ -5,4 +5,12 @@
 
 body {
     font-family: 'Naruto';
+    background-image: linear-gradient(120deg, #e2c35d, #d88771);
 }
+
+header{
+background-image: url(assets/food.jpeg);
+background-size: cover;
+width: 100%;
+}
+
