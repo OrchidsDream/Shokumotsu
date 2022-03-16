@@ -10,6 +10,7 @@ body {
 }
 
 header{
+<<<<<<< HEAD
     background-image: url(assets\ /food.jpeg);
     background-color: white;
     background-size: cover;
@@ -27,3 +28,16 @@ form {
     border-radius: 10px;
     margin: 30px auto;
 }
+=======
+background-image: url(assets\ /food.jpeg);
+background-size: cover;
+width: 100%;
+}
+
+h1{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+>>>>>>> 1a3242391fbd3011ff04c14aa45dbee839156f22
