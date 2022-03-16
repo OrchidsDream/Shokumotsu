@@ -10,7 +10,7 @@ body {
 }
 
 header{
-background-image: url(assets\ /food.jpeg);
+background-image: url(images/food.jpeg);
 background-size: cover;
 width: 100%;
 }
