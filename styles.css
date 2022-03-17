@@ -6,7 +6,9 @@
 body {
     font-family: 'Naruto';
     background-image: linear-gradient(120deg, #dfcb89, #db7633ad);
+    background-repeat: no-repeat;
     margin: 0;
+    height: 100vh;
 }
 
 header {
@@ -40,6 +42,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 25px;
 }
 
 .menubuttons {
@@ -49,5 +52,10 @@ form {
     font-size: 25px;
     margin: 10px auto;
     border-radius: 10px;
+    box-shadow: 1px 1px 10px black;
+    border: 1px solid rgba(0, 0, 0, 0.788);
 }
 
+#viewmenu {
+    display: none;
+}
