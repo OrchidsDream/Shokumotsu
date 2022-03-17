@@ -56,6 +56,32 @@ form {
     border: 1px solid rgba(0, 0, 0, 0.788);
 }
 
+.extend {
+    height: 250px;
+}
+
 #viewmenu {
     display: none;
+}
+
+.foodchoices {
+    display: none;
+    justify-content: space-around;
+    width: 90vw;
+    height: 300px;
+    background-color: white;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px black;
+    border: 1px solid rgba(0, 0, 0, 0.788);
+}
+
+.foodchoicesshow {
+    display: flex;
+    animation: open .1s;
+}
+
+@keyframes open {
+    from {height: 0px}
+    to {height: 300px}
 }
