@@ -65,7 +65,6 @@ form {
 }
 
 .foodchoices {
-    display: none;
     justify-content: space-around;
     width: 90vw;
     height: 300px;
@@ -76,6 +75,11 @@ form {
     border: 1px solid rgba(0, 0, 0, 0.788);
 }
 
+.foodchoicesclose {
+    display: none;
+    animation: close .1s;
+}
+
 .foodchoicesshow {
     display: flex;
     animation: open .1s;
@@ -84,4 +88,9 @@ form {
 @keyframes open {
     from {height: 0px}
     to {height: 300px}
+}
+
+@keyframes close {
+    from {height: 300px}
+    to {height: 0px}
 }
