@@ -9,15 +9,45 @@ body {
     margin: 0;
 }
 
-header{
-background-image: url(images/food.jpeg);
-background-size: cover;
-width: 100%;
+header {
+    background-image: url(images/food.jpeg);
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
 
-h1{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+.fa-solid {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    font-size: 50px;
+    color: white;
+    text-shadow: 4px 4px 5px black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menubuttons {
+    width: 80vw;
+    height: 125px;
+    font-family: "Naruto";
+    font-size: 25px;
+    margin: 10px auto;
+    border-radius: 10px;
 }
 
