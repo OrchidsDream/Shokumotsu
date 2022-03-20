@@ -74,10 +74,7 @@ form {
     border-radius: 10px;
     box-shadow: 1px 1px 10px black;
     border: 1px solid rgba(0, 0, 0, 0.788);
-}
-
-.foodchoicesclose {
-    animation: close .1s forwards;
+    display: none;
 }
 
 .foodchoicesshow {
@@ -88,11 +85,4 @@ form {
 @keyframes open {
     from {height: 0px}
     to {height: 300px}
-}
-
-@keyframes close {
-    from {height: 300px}
-    to {height: 0px;
-    overflow: hidden;
-    border: none}
 }
