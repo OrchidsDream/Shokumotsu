@@ -1,6 +1,7 @@
-document.querySelector(".menubuttons").addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(".foodchoices").classList.toggle("foodchoicesshow");
-    document.querySelector(".foodchoices").classList.toggle("foodchoicesclose");
-})
+let menubuttons = document.querySelector("form");
 
+
+    menubuttons.addEventListener("click",function(e){
+        e.preventDefault();
+        e.target.querySelector(".foodchoices").classList.toggle("foodchoicesshow");
+    })
