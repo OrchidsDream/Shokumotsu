@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let products = [
     {
         "name": "Hamburger",
@@ -98,4 +99,12 @@ BuildTemplate(filteredDesserts)
 
   //let entreeContainer = document.querySelector('.foodchoices');
   //entreeContainer.insertAdjacentHTML('beforeend', BuildTemplate(filteredEntrees))
+=======
+let menubuttons = document.querySelector("form");
+>>>>>>> b8b56c13555e4490401ebf6a96ae27f04bebd23a
 
+
+    menubuttons.addEventListener("click",function(e){
+        e.preventDefault();
+        e.target.querySelector(".foodchoices").classList.toggle("foodchoicesshow");
+    })

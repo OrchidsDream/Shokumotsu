@@ -8,7 +8,7 @@ body {
     background-image: linear-gradient(120deg, #dfcb89, #db7633ad);
     background-repeat: no-repeat;
     margin: 0;
-    height: 100vh;
+    height: 950px;
 }
 
 header {
@@ -66,6 +66,7 @@ form {
 }
 
 .foodchoices {
+    display: none;
     justify-content: space-around;
     width: 90vw;
     height: 300px;
@@ -74,7 +75,10 @@ form {
     border-radius: 10px;
     box-shadow: 1px 1px 10px black;
     border: 1px solid rgba(0, 0, 0, 0.788);
+<<<<<<< HEAD
     display: none;
+=======
+>>>>>>> b8b56c13555e4490401ebf6a96ae27f04bebd23a
 }
 
 .foodchoicesshow {
