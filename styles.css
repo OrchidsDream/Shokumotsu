@@ -75,6 +75,17 @@ form {
     box-shadow: 1px 1px 10px black;
     border: 1px solid rgba(0, 0, 0, 0.788);
     background-color: white;
+    display: none;
+    animation: open .1s;
+}
+
+@keyframes open {
+    from {height: 0px;}
+    to {height: 225px;}
+}
+
+.show {
+    display: block;
 }
 
 img {

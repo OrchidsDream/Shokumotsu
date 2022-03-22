@@ -61,21 +61,36 @@ let products = [
     },
 ]
 
-// function filterItems(arr, query) {
-//     return arr.filter(function(el){
-//         return el.price === query
-//     })
-// }
-
-let pclass = document.querySelectorAll(".pclass")
+/* let pclass = document.querySelector(".pclass")
 
 products.forEach(element => {
     let p = document.createElement("p")
     p.innerText = element.price;
-    p.append(pclass)
+    pclass.append(p);
+});
+ */
+
+document.querySelector("#entreebutton").addEventListener("click", function(e){
+    e.preventDefault();
+    document.querySelector("#entreediv").classList.toggle("show");
 });
 
+document.querySelector("#saladsbutton").addEventListener("click", function(e){
+    e.preventDefault();
+    document.querySelector("#saladsdiv").classList.toggle("show");
+});
 
+document.querySelector("#sidesbutton").addEventListener("click", function(e){
+    e.preventDefault();
+    document.querySelector("#sidesdiv").classList.toggle("show");
+});
 
+document.querySelector("#drinksbutton").addEventListener("click", function(e){
+    e.preventDefault();
+    document.querySelector("#drinksdiv").classList.toggle("show");
+});
 
-
+document.querySelector("#dessertsbutton").addEventListener("click", function(e){
+    e.preventDefault();
+    document.querySelector("#dessertsdiv").classList.toggle("show");
+});
