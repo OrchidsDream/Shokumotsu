@@ -66,27 +66,35 @@ form {
 }
 
 .foodchoices {
-    display: none;
-    justify-content: space-around;
-    width: 90vw;
-    height: 300px;
-    background-color: white;
+    width: 85vw;
+    height: 225px;
+    font-family: "Naruto";
+    font-size: 25px;
     margin: 10px auto;
     border-radius: 10px;
     box-shadow: 1px 1px 10px black;
     border: 1px solid rgba(0, 0, 0, 0.788);
-<<<<<<< HEAD
-    display: none;
-=======
->>>>>>> b8b56c13555e4490401ebf6a96ae27f04bebd23a
+    background-color: white;
 }
 
-.foodchoicesshow {
+img {
+    height: 100px;
+    width: 150px;
+}
+
+li {
+    list-style-type: none;
     display: flex;
-    animation: open .1s;
+    flex-direction: column;
+    align-items: center;
 }
 
-@keyframes open {
-    from {height: 0px}
-    to {height: 300px}
+ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.pclass {
+    margin-bottom: 10px;
 }

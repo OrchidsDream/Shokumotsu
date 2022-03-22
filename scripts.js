@@ -1,110 +1,81 @@
-<<<<<<< HEAD
 let products = [
     {
         "name": "Hamburger",
         "category": "Entree",
         "description": "This is a hamburger",
-        "price": 5.95
+        "price": 11.95
     },
     {
         "name": "Ramen",
         "category": "Entree",
         "description": "This is ramen",
-        "price": 5.95
+        "price": 14.95
     },
     {
         "name": "Caesar Salad",
         "category": "Salads",
         "description": "This is a caesar salad",
-        "price": 5.95
+        "price": 9.95
     },
     {
         "name": "Greek Salad",
         "category": "Salads",
         "description": "This is a greek salad",
-        "price": 5.95
+        "price": 9.95
     },
     {
         "name": "Dumplings",
         "category": "Sides",
-        "description": "These are dumplings",
-        "price": 5.95
+        "description": "5 dumplings",
+        "price": 7.50
     },
     {
         "name": "Fries",
         "category": "Sides",
         "description": "These are fries",
-        "price": 5.95
+        "price": 4.25
     },
     {
         "name": "Coke",
         "category": "Drinks",
         "description": "This is a coke",
-        "price": 5.95
+        "price": 2.25
     },
     {
         "name": "Ramune",
         "category": "Drinks",
         "description": "This is a pop",
-        "price": 5.95
+        "price": 2.65
     },
     {
         "name": "Mochi",
         "category": "Dessert",
-        "description": "This is mochi",
-        "price": 5.95
+        "description": "3 Mochis",
+        "price": 5.25
     },
     {
         "name": "Puppy Chow",
         "category": "Dessert",
         "description": "This is puppy chow",
         "price": 5.95,
-        'pictureLink': './images/'
     },
 ]
 
-/**
- * Filter array items based on search criteria (query)
- */
- function filterItems(arr, query) {
-    return arr.filter(function(el) {
-      return el.category === query
-    })
-  }
+// function filterItems(arr, query) {
+//     return arr.filter(function(el){
+//         return el.price === query
+//     })
+// }
 
-function BuildTemplate(food) {
-    food.map(eachItem => {
-        let template = ` 
-            <img src='${eachItem.pictureLink}'
-            <h2>${eachItem.name}</h2>
-            <p>${eachItem.category}</p>
-            <p>${eachItem.description}</p>
-            <p>${eachItem.price}</p>
-        `
-        console.log(template)
-        return template;
-    }); 
-}
-let filteredEntrees = filterItems(products, "Entree");
-let filteredSalads = filterItems(products, "Salads");
-let filteredSides = filterItems(products, "Sides");
-let filteredDrinks = filterItems(products, "Drinks");
-let filteredDesserts = filterItems(products, "Dessert");
+let pclass = document.querySelectorAll(".pclass")
 
-BuildTemplate(filteredEntrees)
-BuildTemplate(filteredSalads)
-BuildTemplate(filteredSides)
-BuildTemplate(filteredDrinks)
-BuildTemplate(filteredDesserts)
-
-  //let entreeContainer = document.querySelector('.foodchoices');
-  //entreeContainer.insertAdjacentHTML('beforeend', BuildTemplate(filteredEntrees))
-=======
-let menubuttons = document.querySelector("form");
->>>>>>> b8b56c13555e4490401ebf6a96ae27f04bebd23a
+products.forEach(element => {
+    let p = document.createElement("p")
+    p.innerText = element.price;
+    p.append(pclass)
+});
 
 
-    menubuttons.addEventListener("click",function(e){
-        e.preventDefault();
-        e.target.querySelector(".foodchoices").classList.toggle("foodchoicesshow");
-    })
+
+
+
