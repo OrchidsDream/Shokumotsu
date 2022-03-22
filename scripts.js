@@ -61,19 +61,22 @@ let products = [
     },
 ]
 
-// function filterItems(arr, query) {
-//     return arr.filter(function(el){
-//         return el.price === query
-//     })
-// }
+// let pclass = document.querySelector(".pclass")
 
-let pclass = document.querySelectorAll(".pclass")
+// products.forEach(element => {
+//     let p = document.createElement("p")
+//     p.innerText = element.price;
+// });
 
-products.forEach(element => {
-    let p = document.createElement("p")
-    p.innerText = element.price;
-    p.append(pclass)
-});
+entreediv = document.querySelector(".entreediv")
+
+entreediv.addEventListener("click", function(e) {
+    e.preventDefault()
+    
+})
+
+
+
 
 
 
