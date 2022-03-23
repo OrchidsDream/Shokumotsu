@@ -70,27 +70,20 @@ products.forEach(element => {
 });
  */
 
-document.querySelector("#entreebutton").addEventListener("click", function(e){
-    e.preventDefault();
-    document.querySelector("#entreediv").classList.toggle("show");
+let menubuttons = document.querySelectorAll(".menubuttons");
+
+window.addEventListener("click", function(){
+    menubuttons.forEach(function(buttons){
+        if (buttons.nextElementSibling.classList.contains("show")){
+            buttons.nextElementSibling.classList.remove("show");
+        };
+    });
 });
 
-document.querySelector("#saladsbutton").addEventListener("click", function(e){
-    e.preventDefault();
-    document.querySelector("#saladsdiv").classList.toggle("show");
-});
-
-document.querySelector("#sidesbutton").addEventListener("click", function(e){
-    e.preventDefault();
-    document.querySelector("#sidesdiv").classList.toggle("show");
-});
-
-document.querySelector("#drinksbutton").addEventListener("click", function(e){
-    e.preventDefault();
-    document.querySelector("#drinksdiv").classList.toggle("show");
-});
-
-document.querySelector("#dessertsbutton").addEventListener("click", function(e){
-    e.preventDefault();
-    document.querySelector("#dessertsdiv").classList.toggle("show");
+menubuttons.forEach(function(buttons){
+    buttons.addEventListener("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        buttons.nextElementSibling.classList.toggle("show");
+    });
 });
