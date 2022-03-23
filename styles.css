@@ -111,9 +111,9 @@ ul {
 
 .form2 {
     width: 80vw;
-    height: 500px;
-    font-family: "Naruto";
-    font-size: 25px;
+    font-family: sans-serif; 
+    font-size:  25px; 
+    font-weight: bold;
     margin: 10px auto;
     border-radius: 10px;
     box-shadow: 1px 1px 10px black;
