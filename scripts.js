@@ -19,56 +19,56 @@ let products = [
         "category": "Salads",
         "description": "This is a caesar salad",
         "price": 9.95,
-        'pictureLink': './images/'
+        'pictureLink': './images/caesarsalad.png'
     },
     {
         "name": "Greek Salad",
         "category": "Salads",
         "description": "This is a greek salad",
         "price": 9.95,
-        'pictureLink': './images/'
+        'pictureLink': './images/greeksalad.png'
     },
     {
         "name": "Dumplings",
         "category": "Sides",
         "description": "5 dumplings",
         "price": 7.50,
-        'pictureLink': './images/'
+        'pictureLink': './images/dumplings.png'
     },
     {
         "name": "Fries",
         "category": "Sides",
         "description": "These are fries",
         "price": 4.25,
-        'pictureLink': './images/'
+        'pictureLink': './images/fries.png'
     },
     {
         "name": "Coke",
         "category": "Drinks",
         "description": "This is a coke",
         "price": 2.25,
-        'pictureLink': './images/'
+        'pictureLink': './images/coke.png'
     },
     {
         "name": "Ramune",
         "category": "Drinks",
         "description": "This is a pop",
         "price": 2.65,
-        'pictureLink': './images/'
+        'pictureLink': './images/ramune.png'
     },
     {
         "name": "Mochi",
         "category": "Dessert",
         "description": "3 Mochis",
         "price": 5.25,
-        'pictureLink': './images/'
+        'pictureLink': './images/mochi.png'
     },
     {
         "name": "Puppy Chow",
         "category": "Dessert",
         "description": "This is puppy chow",
         "price": 5.95,
-        'pictureLink': './images/'
+        'pictureLink': './images/puppychow.png'
     },
 ]
 
@@ -98,7 +98,6 @@ menubuttons.forEach(function(buttons){
         buttons.nextElementSibling.classList.toggle("show");
     });
 });
-
 
 let itemcheckout = document.createElement("div");
 itemcheckout.classList.add("itemcheckout");
