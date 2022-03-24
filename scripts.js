@@ -98,3 +98,18 @@ menubuttons.forEach(function(buttons){
         buttons.nextElementSibling.classList.toggle("show");
     });
 });
+
+
+let itemcheckout = document.createElement("div");
+itemcheckout.classList.add("itemcheckout");
+document.querySelector(".form2").append(itemcheckout);
+let namecheckout = document.createElement("h3");
+namecheckout.innerText = `${products[0].name} | $${products[0].price}`;
+itemcheckout.append(namecheckout);
+let image = document.createElement("img");
+image.setAttribute("src", products[0].pictureLink);
+image.classList.add("imagecheckout");
+itemcheckout.append(image);
+let quantitycheckout = document.createElement("div");
+quantitycheckout.innerText = `Quantity`;
+itemcheckout.append(quantitycheckout);

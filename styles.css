@@ -117,7 +117,7 @@ ul {
     margin-bottom: 10px;
 }
 
-.form2 {
+.form2, .form3 {
     width: 80vw;
     font-family: sans-serif; 
     font-size:  25px; 
@@ -131,4 +131,31 @@ ul {
 }
 .cartbutton {
     font-family: sans-serif;
+}
+
+.currency{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+}
+
+.mula{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.itemcheckout {
+    width: 90%;
+    height: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.788);
+    margin: 0 auto;
+}
+.imagecheckout {
+    width: 100px;
+    height: 80px;
+    box-shadow: none;
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.788);
 }
