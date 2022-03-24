@@ -19,56 +19,56 @@ let products = [
         "category": "Salads",
         "description": "This is a caesar salad",
         "price": 9.95,
-        'pictureLink': './images/'
+        'pictureLink': './images/caesersalad.png'
     },
     {
         "name": "Greek Salad",
         "category": "Salads",
         "description": "This is a greek salad",
         "price": 9.95,
-        'pictureLink': './images/'
+        'pictureLink': './images/greeksalad.png'
     },
     {
         "name": "Dumplings",
         "category": "Sides",
         "description": "5 dumplings",
         "price": 7.50,
-        'pictureLink': './images/'
+        'pictureLink': './images/dumplings.png'
     },
     {
         "name": "Fries",
         "category": "Sides",
         "description": "These are fries",
         "price": 4.25,
-        'pictureLink': './images/'
+        'pictureLink': './images/fries.png'
     },
     {
         "name": "Coke",
         "category": "Drinks",
         "description": "This is a coke",
         "price": 2.25,
-        'pictureLink': './images/'
+        'pictureLink': './images/coke.png'
     },
     {
         "name": "Ramune",
         "category": "Drinks",
         "description": "This is a pop",
         "price": 2.65,
-        'pictureLink': './images/'
+        'pictureLink': './images/ramune.png'
     },
     {
         "name": "Mochi",
         "category": "Dessert",
         "description": "3 Mochis",
         "price": 5.25,
-        'pictureLink': './images/'
+        'pictureLink': './images/mochi.png'
     },
     {
         "name": "Puppy Chow",
         "category": "Dessert",
         "description": "This is puppy chow",
         "price": 5.95,
-        'pictureLink': './images/'
+        'pictureLink': './images/puppychow'
     },
 ]
 
@@ -87,15 +87,25 @@ window.addEventListener("click", function(){
     menubuttons.forEach(function(buttons){
         if (buttons.nextElementSibling.classList.contains("show")){
             buttons.nextElementSibling.classList.remove("show");
+            buttons.classList.remove("menuitemactive");
         };
     });
 });
 
 menubuttons.forEach(function(buttons){
     buttons.addEventListener("click", function(e){
+        menubuttons.forEach(function(buttons){
+            if (buttons.nextElementSibling.classList.contains("show")){
+                buttons.nextElementSibling.classList.remove("show");
+                buttons.classList.remove("menuitemactive");
+            };
+        });
+        if (!buttons.nextElementSibling.classList.contains("show")){
+            buttons.nextElementSibling.classList.add("show");
+            buttons.classList.add("menuitemactive");
+        };
         e.preventDefault();
         e.stopPropagation();
-        buttons.nextElementSibling.classList.toggle("show");
     });
 });
 
@@ -103,13 +113,16 @@ menubuttons.forEach(function(buttons){
 let itemcheckout = document.createElement("div");
 itemcheckout.classList.add("itemcheckout");
 document.querySelector(".form2").append(itemcheckout);
+
 let namecheckout = document.createElement("h3");
 namecheckout.innerText = `${products[0].name} | $${products[0].price}`;
 itemcheckout.append(namecheckout);
+
 let image = document.createElement("img");
 image.setAttribute("src", products[0].pictureLink);
 image.classList.add("imagecheckout");
 itemcheckout.append(image);
+
 let quantitycheckout = document.createElement("div");
 quantitycheckout.innerText = `Quantity`;
 itemcheckout.append(quantitycheckout);

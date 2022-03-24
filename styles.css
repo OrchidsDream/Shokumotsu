@@ -75,7 +75,7 @@ h2 {
     height: 225px;
     font-family: "Naruto";
     font-size: 25px;
-    margin: 10px auto;
+    margin: -5px auto 10px auto;
     border-radius: 10px;
     box-shadow: 1px 1px 10px black;
     border: 1px solid rgba(0, 0, 0, 0.788);
@@ -93,10 +93,15 @@ h2 {
     display: block;
 }
 
+.menuitemactive {
+    background-color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
 img {
-    margin-top: 16px;
-    height: 100px;
-    width: 150px;
+    margin-top: 9px;
+    height: 80px;
+    width: 120px;
     box-shadow: 2px 1px 10px black;
 }
 
@@ -105,16 +110,19 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 20px;
 }
 
 ul {
     display: flex;
     justify-content: space-around;
     padding: 0;
+    margin-top: 20px;
 }
 
 .pclass {
     margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 .form2, .form3 {
@@ -131,20 +139,19 @@ ul {
 }
 .cartbutton {
     font-family: sans-serif;
+    font-size: 15px;
 }
 
-.currency{
+.currency {
     display: flex;
     flex-direction: column;
     justify-content: space-between;   
 }
 
-.mula{
+.mula {
     display: flex;
     justify-content: space-between;
 }
-
-
 
 .itemcheckout {
     width: 90%;
@@ -152,6 +159,7 @@ ul {
     border: 1px solid rgba(0, 0, 0, 0.788);
     margin: 0 auto;
 }
+
 .imagecheckout {
     width: 100px;
     height: 80px;
