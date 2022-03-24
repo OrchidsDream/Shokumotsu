@@ -97,15 +97,25 @@ window.addEventListener("click", function(){
     menubuttons.forEach(function(buttons){
         if (buttons.nextElementSibling.classList.contains("show")){
             buttons.nextElementSibling.classList.remove("show");
+            buttons.classList.remove("menuitemactive");
         };
     });
 });
 
 menubuttons.forEach(function(buttons){
     buttons.addEventListener("click", function(e){
+        menubuttons.forEach(function(buttons){
+            if (buttons.nextElementSibling.classList.contains("show")){
+                buttons.nextElementSibling.classList.remove("show");
+                buttons.classList.remove("menuitemactive");
+            };
+        });
+        if (!buttons.nextElementSibling.classList.contains("show")){
+            buttons.nextElementSibling.classList.add("show");
+            buttons.classList.add("menuitemactive");
+        };
         e.preventDefault();
         e.stopPropagation();
-        buttons.nextElementSibling.classList.toggle("show");
     });
 });
 
