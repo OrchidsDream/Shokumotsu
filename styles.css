@@ -151,6 +151,7 @@ ul {
     height: 150px;
     border: 1px solid rgba(0, 0, 0, 0.788);
     margin: 0 auto;
+    margin-top: 10px;
 }
 .imagecheckout {
     width: 100px;
@@ -158,4 +159,13 @@ ul {
     box-shadow: none;
     margin: 0;
     border: 1px solid rgba(0, 0, 0, 0.788);
+}
+
+.exitbutton {
+    position: relative;
+    bottom: 150px;
+    left: 680px;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(255, 82, 82);
 }

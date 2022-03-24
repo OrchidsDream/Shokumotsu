@@ -132,17 +132,30 @@ for (let i = 0; i < cartbuttons.length; i++) {
         quantitycheckout.innerText = `Quantity`;
         itemcheckout.append(quantitycheckout);
 
+        // let exitbutton = document.createElement("button");
+        // exitbutton.classList.add("exitbutton")
+        // itemcheckout.appendChild(exitbutton)
+
         let exitbutton = document.createElement("button");
-        exitbutton.classList.add("exitbutton")
+        exitbutton.className = 'fa fa-smile-o';
         itemcheckout.appendChild(exitbutton)
+
+        
 
         console.log(products[i].price)
     })
 }
 
+// exitbutton.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     console.log("hi")
+// })
+
 function shownProduct(product) {
     console.log("My product is", product)
 }
+
+
 
 
 
