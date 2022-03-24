@@ -4,12 +4,13 @@
 }
 
 body {
-    font-family: 'Naruto';
+    
     background-color: rgb(204, 166, 104, 0.85);
     margin: 0;
 }
 
 header {
+    font-family: 'Naruto';
     background-image: url(images/food.jpeg);
     background-size: cover;
     width: 100%;
@@ -35,6 +36,11 @@ h1 {
     color: white;
     text-shadow: 4px 4px 5px black;
 }
+h2 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
 .form1 {
     display: flex;
@@ -44,6 +50,7 @@ h1 {
 }
 
 .menubuttons {
+    font-family: 'Naruto';
     width: 80vw;
     height: 125px;
     font-family: "Naruto";
@@ -87,6 +94,7 @@ h1 {
 }
 
 img {
+    margin-top: 16px;
     height: 100px;
     width: 150px;
     box-shadow: 2px 1px 10px black;
@@ -119,4 +127,8 @@ ul {
     box-shadow: 1px 1px 10px black;
     border: 1px solid rgba(0, 0, 0, 0.788);
     background-color: white;
+    padding-top: 10px;
+}
+.cartbutton {
+    font-family: sans-serif;
 }
