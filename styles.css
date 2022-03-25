@@ -137,6 +137,7 @@ ul {
     background-color: white;
     padding-top: 10px;
 }
+
 .cartbutton {
     font-family: sans-serif;
     font-size: 15px;
@@ -169,11 +170,36 @@ ul {
     border: 1px solid rgba(0, 0, 0, 0.788);
 }
 
-.exitbutton {
-    position: relative;
-    bottom: 150px;
-    left: 680px;
+.minusplusbuttons {
     width: 25px;
     height: 25px;
-    background-color: rgb(255, 82, 82);
+}
+
+.exitbutton {
+    width: 25px;
+    height: 25px;
+    background-color: red;
+}
+
+@media only screen and (min-width: 768px) {
+    #body {
+        display: flex;
+    }
+
+    .form1 {
+        width: 50vw;
+    }
+
+    .form2 {
+        width: 50vw;
+        margin-right: 50px;
+    }
+
+    .menubuttons {
+        width: 80%;
+    }
+
+    .foodchoices {
+        width: 85%;
+    }
 }

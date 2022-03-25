@@ -125,6 +125,10 @@ for (let i = 0; i < cartbuttons.length; i++) {
     cartbuttons[i].addEventListener("click", (e) => {
         e.preventDefault();
         shownProduct(products[i]);
+        if (products.inCart = 0) {
+            products.inCart = 1;
+        }
+
         let itemcheckout = document.createElement("div")
         itemcheckout.classList.add("itemcheckout")
         document.querySelector(".form2").append(itemcheckout)
@@ -142,32 +146,51 @@ for (let i = 0; i < cartbuttons.length; i++) {
         quantitycheckout.innerText = `Quantity`;
         itemcheckout.append(quantitycheckout);
 
+        let quantitycount = document.createElement("p")
+        quantitycount.classList.add("quantitycount")
+        quantitycount.innerText = 0
+        itemcheckout.appendChild(quantitycount)
+
+        let minusbutton = document.createElement("button");
+        let plusbutton = document.createElement("button");
+        minusbutton.classList.add("minusplusbuttons");
+        plusbutton.classList.add("minusplusbuttons");
+        quantitycheckout.appendChild(minusbutton)
+        quantitycheckout.appendChild(plusbutton)
+        
+        let exitbutton = document.createElement("button");
+        exitbutton.classList.add("exitbutton")
+        namecheckout.appendChild(exitbutton)
+
         // let exitbutton = document.createElement("button");
-        // exitbutton.classList.add("exitbutton")
+        // exitbutton.className = 'fa fa-smile-o';
         // itemcheckout.appendChild(exitbutton)
 
-        let exitbutton = document.createElement("button");
-        exitbutton.className = 'fa fa-smile-o';
-        itemcheckout.appendChild(exitbutton)
+        plusbutton.addEventListener("click", (e) => {
+            e.preventDefault();
+            products[i].inCart += 1;
+            quantitycount.innerText = products[i].inCart;
+            console.log(products[i].inCart)
+        })
 
+        minusbutton.addEventListener("click", (e) => {
+            e.preventDefault();
+            products[i].inCart -= 1;
+            quantitycount.innerText = products[i].inCart;
+            console.log(products[i].inCart)
+        })
         
-
-        console.log(products[i].price)
+        exitbutton.addEventListener("click", (e) => {
+            e.preventDefault();
+            itemcheckout.remove()
+        })
     })
 }
 
-// exitbutton.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     console.log("hi")
-// })
 
 function shownProduct(product) {
     console.log("My product is", product)
 }
-
-
-
-
 
 // cartbuttons.forEach(function(buttons){
 //     buttons.addEventListener("click", function(e){
