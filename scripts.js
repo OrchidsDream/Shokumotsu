@@ -131,8 +131,9 @@ menubuttons.forEach(function(buttons){
 
 let cartbuttons = document.querySelectorAll(".cartbutton");
 
-let subTotal = 0;
 
+let subTotal = 0;
+let quantitycount = document.createElement("p");
 
 for (let i = 0; i < cartbuttons.length; i++) {
     cartbuttons[i].addEventListener("click", (e) => {
@@ -162,9 +163,8 @@ for (let i = 0; i < cartbuttons.length; i++) {
             quantitycheckout.innerText = `Quantity`;
             itemcheckout.append(quantitycheckout);
     
-            let quantitycount = document.createElement("p")
             quantitycount.classList.add("quantitycount")
-            quantitycount.innerText = 1;
+            quantitycount.innerText = products[i].inCart;
             itemcheckout.appendChild(quantitycount)
     
             let minusbutton = document.createElement("button");
@@ -187,6 +187,8 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 products[i].inCart += 1;
                 quantitycount.innerText = products[i].inCart;
                 console.log(products[i].inCart)
+                subTotal += products[i].price;
+                console.log(subTotal);
             })
             
             minusbutton.addEventListener("click", (e) => {
@@ -196,18 +198,30 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 }
                 quantitycount.innerText = products[i].inCart;
                 console.log(products[i].inCart)
+                if (subTotal > products[i].price){
+                    subTotal -= products[i].price;
+                    console.log(subTotal);
+                }
+                if (products[i].inCart <= 0) {
+                    itemcheckout.remove();
+                    products[i].display = false;
+                }
             })
             
             exitbutton.addEventListener("click", (e) => {
                 e.preventDefault();
                 itemcheckout.remove()
+                subTotal -= products[i].inCart * products[i].price;
                 products[i].inCart = 0;
-                
+                products[i].display = false;
+                console.log(subTotal);
             })
+        } else if (products[i].display === true) {
+            quantitycount.innerText = products[i].inCart;
         }
+        subTotal += products[i].price;
+        console.log(subTotal)
     })
-    subTotal = products[i].price * products[i].inCart;
-    console.log(subTotal)
 }
 
 
