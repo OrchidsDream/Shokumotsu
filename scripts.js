@@ -4,8 +4,9 @@ let products = [
         "category": "Entree",
         "description": "This is a hamburger",
         "price": 11.95,
-        'pictureLink': './images/hamburger.png',
+        "pictureLink": './images/hamburger.png',
         "inCart": 0,
+        "display": false,
         
     },
     {
@@ -13,72 +14,81 @@ let products = [
         "category": "Entree",
         "description": "This is ramen",
         "price": 14.95,
-        'pictureLink': './images/ramen.png',
+        "pictureLink": './images/ramen.png',
         "inCart": 0,
+        "display": false,
     },
     {
         "name": "Caesar Salad",
         "category": "Salads",
         "description": "This is a caesar salad",
         "price": 9.95,
-        'pictureLink': './images/caesersalad.png',
+        "pictureLink": './images/caesersalad.png',
         "inCart": 0,
+        "display": false,
     },
     {
         "name": "Greek Salad",
         "category": "Salads",
         "description": "This is a greek salad",
         "price": 9.95,
-        'pictureLink': './images/greeksalad.png',
+        "pictureLink": './images/greeksalad.png',
         "inCart": 0,
+        "display": false,
     },
     {
         "name": "Dumplings",
         "category": "Sides",
         "description": "5 dumplings",
         "price": 7.50,
-        'pictureLink': './images/dumplings.png',
+        "pictureLink": './images/dumplings.png',
         "inCart": 0,
+        "display": false,
     },
     {
         "name": "Fries",
         "category": "Sides",
         "description": "These are fries",
         "price": 4.25,
-        'pictureLink': './images/fries.png',
+        "pictureLink": './images/fries.png',
         "inCart": 0,
+        "display": false,
     },
     {
         "name": "Coke",
         "category": "Drinks",
         "description": "This is a coke",
         "price": 2.25,
-        'pictureLink': './images/coke.png',
+        "pictureLink": './images/coke.png',
         "inCart": 0,
+        "display": false,
     },
     {
         "name": "Ramune",
         "category": "Drinks",
         "description": "This is a pop",
         "price": 2.65,
-        'pictureLink': './images/ramune.png',
+        "pictureLink": './images/ramune.png',
         "inCart": 0,
+        "display": false,
     },
     {
         "name": "Mochi",
         "category": "Dessert",
         "description": "3 Mochis",
         "price": 5.25,
-        'pictureLink': './images/mochi.png',
+        "pictureLink": './images/mochi.png',
         "inCart": 0,
+        "display": false,
     },
     {
         "name": "Puppy Chow",
         "category": "Dessert",
         "description": "This is puppy chow",
         "price": 5.95,
-        'pictureLink': './images/puppychow.png',
+        "pictureLink": './images/puppychow.png',
         "inCart": 0,
+        "display": false,
     },
 ]
 
@@ -121,71 +131,86 @@ menubuttons.forEach(function(buttons){
 
 let cartbuttons = document.querySelectorAll(".cartbutton");
 
+let subTotal = 0;
+
+
 for (let i = 0; i < cartbuttons.length; i++) {
     cartbuttons[i].addEventListener("click", (e) => {
         e.preventDefault();
-        shownProduct(products[i]);
-        if (products.inCart = 0) {
-            products.inCart = 1;
+        
+        if (products[i].display === false) {
+            products[i].display = true;
+
+            if (products[i].inCart === 0) {
+                products[i].inCart += 1;
+            }
+            shownProduct(products[i]);
+            let itemcheckout = document.createElement("div")
+            itemcheckout.classList.add("itemcheckout")
+            document.querySelector(".form2").append(itemcheckout)
+            
+            let namecheckout = document.createElement("h3");
+            namecheckout.innerText = `${products[i].name} | $${products[i].price}`;
+            itemcheckout.appendChild(namecheckout);
+            
+            let image = document.createElement("img");
+            image.setAttribute("src", products[i].pictureLink);
+            image.classList.add("imagecheckout");
+            itemcheckout.append(image);
+            
+            let quantitycheckout = document.createElement("div");
+            quantitycheckout.innerText = `Quantity`;
+            itemcheckout.append(quantitycheckout);
+    
+            let quantitycount = document.createElement("p")
+            quantitycount.classList.add("quantitycount")
+            quantitycount.innerText = 1;
+            itemcheckout.appendChild(quantitycount)
+    
+            let minusbutton = document.createElement("button");
+            let plusbutton = document.createElement("button");
+            minusbutton.classList.add("minusplusbuttons");
+            plusbutton.classList.add("minusplusbuttons");
+            quantitycheckout.appendChild(minusbutton)
+            quantitycheckout.appendChild(plusbutton)
+            
+            let exitbutton = document.createElement("button");
+            exitbutton.classList.add("exitbutton")
+            namecheckout.appendChild(exitbutton)
+
+            // let exitbutton = document.createElement("button");
+            // exitbutton.className = 'fa fa-smile-o';
+            // itemcheckout.appendChild(exitbutton)
+            
+            plusbutton.addEventListener("click", (e) => {
+                e.preventDefault();
+                products[i].inCart += 1;
+                quantitycount.innerText = products[i].inCart;
+                console.log(products[i].inCart)
+            })
+            
+            minusbutton.addEventListener("click", (e) => {
+                e.preventDefault();
+                if(products[i].inCart > 0) {
+                    products[i].inCart -= 1;
+                }
+                quantitycount.innerText = products[i].inCart;
+                console.log(products[i].inCart)
+            })
+            
+            exitbutton.addEventListener("click", (e) => {
+                e.preventDefault();
+                itemcheckout.remove()
+                products[i].inCart = 0;
+                
+            })
         }
-
-        let itemcheckout = document.createElement("div")
-        itemcheckout.classList.add("itemcheckout")
-        document.querySelector(".form2").append(itemcheckout)
-        
-        let namecheckout = document.createElement("h3");
-        namecheckout.innerText = `${products[i].name} | $${products[i].price}`;
-        itemcheckout.appendChild(namecheckout);
-        
-        let image = document.createElement("img");
-        image.setAttribute("src", products[i].pictureLink);
-        image.classList.add("imagecheckout");
-        itemcheckout.append(image);
-        
-        let quantitycheckout = document.createElement("div");
-        quantitycheckout.innerText = `Quantity`;
-        itemcheckout.append(quantitycheckout);
-
-        let quantitycount = document.createElement("p")
-        quantitycount.classList.add("quantitycount")
-        quantitycount.innerText = 0
-        itemcheckout.appendChild(quantitycount)
-
-        let minusbutton = document.createElement("button");
-        let plusbutton = document.createElement("button");
-        minusbutton.classList.add("minusplusbuttons");
-        plusbutton.classList.add("minusplusbuttons");
-        quantitycheckout.appendChild(minusbutton)
-        quantitycheckout.appendChild(plusbutton)
-        
-        let exitbutton = document.createElement("button");
-        exitbutton.classList.add("exitbutton")
-        namecheckout.appendChild(exitbutton)
-
-        // let exitbutton = document.createElement("button");
-        // exitbutton.className = 'fa fa-smile-o';
-        // itemcheckout.appendChild(exitbutton)
-
-        plusbutton.addEventListener("click", (e) => {
-            e.preventDefault();
-            products[i].inCart += 1;
-            quantitycount.innerText = products[i].inCart;
-            console.log(products[i].inCart)
-        })
-
-        minusbutton.addEventListener("click", (e) => {
-            e.preventDefault();
-            products[i].inCart -= 1;
-            quantitycount.innerText = products[i].inCart;
-            console.log(products[i].inCart)
-        })
-        
-        exitbutton.addEventListener("click", (e) => {
-            e.preventDefault();
-            itemcheckout.remove()
-        })
     })
+    subTotal = products[i].price * products[i].inCart;
+    console.log(subTotal)
 }
+
+
 
 
 function shownProduct(product) {
@@ -193,8 +218,9 @@ function shownProduct(product) {
 }
 
 // cartbuttons.forEach(function(buttons){
-//     buttons.addEventListener("click", function(e){
-//         e.preventDefault();
-//     });
-// });
-
+    //     buttons.addEventListener("click", function(e){
+        //         e.preventDefault();
+        //     });
+        // });
+        
+        
