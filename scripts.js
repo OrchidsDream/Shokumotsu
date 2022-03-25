@@ -1,5 +1,3 @@
-
-
 let products = [
     {
         "name": "Hamburger",
@@ -114,6 +112,12 @@ window.addEventListener("click", function(){
     });
 });
 
+document.querySelectorAll(".foodchoices").forEach(function(foodchoices){
+    foodchoices.addEventListener("click", function(e){
+        e.stopPropagation();
+    });
+});
+
 menubuttons.forEach(function(buttons){
     buttons.addEventListener("click", function(e){
         menubuttons.forEach(function(buttons){
@@ -152,6 +156,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
             }
 
             shownProduct(products[i]);
+
             let itemcheckout = document.createElement("div");
             itemcheckout.classList.add("itemcheckout");
             document.querySelector("#emptyitem").append(itemcheckout);
