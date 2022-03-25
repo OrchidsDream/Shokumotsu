@@ -209,6 +209,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 grandTotal = subTotal + salesTax;
                 grandTotal = Math.round(100 * grandTotal)/100;
                 document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
+                e.stopPropagation();
             })
             
 
@@ -235,6 +236,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 grandTotal = subTotal + salesTax;
                 grandTotal = Math.round(100 * grandTotal)/100;
                 document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
+                e.stopPropagation();
             })
             
             exitbutton.addEventListener("click", (e) => {
@@ -252,6 +254,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 grandTotal = subTotal + salesTax;
                 grandTotal = Math.round(100 * grandTotal)/100;
                 document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
+                e.stopPropagation();
             })
             subTotal += products[i].price;
             subTotal = Math.round(100 * subTotal)/100;
@@ -271,6 +274,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
         grandTotal = subTotal + salesTax;
         grandTotal = Math.round(100 * grandTotal)/100;
         document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
+        e.stopPropagation();
     })
 }
 
