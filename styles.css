@@ -137,6 +137,7 @@ ul {
     background-color: white;
     padding-top: 10px;
 }
+
 .cartbutton {
     font-family: sans-serif;
     font-size: 15px;
@@ -173,5 +174,20 @@ ul {
         display: flex;
     }
 
-    
+    .form1 {
+        width: 50vw;
+    }
+
+    .form2 {
+        width: 50vw;
+        margin-right: 50px;
+    }
+
+    .menubuttons {
+        width: 80%;
+    }
+
+    .foodchoices {
+        width: 85%;
+    }
 }
