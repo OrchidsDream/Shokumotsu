@@ -167,3 +167,11 @@ ul {
     margin: 0;
     border: 1px solid rgba(0, 0, 0, 0.788);
 }
+
+@media only screen and (min-width: 768px) {
+    #body {
+        display: flex;
+    }
+
+    
+}
