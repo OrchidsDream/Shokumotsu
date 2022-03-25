@@ -217,6 +217,8 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 console.log(subTotal);
             })
         } else if (products[i].display === true) {
+            subTotal += products[i].price;
+            products[i].inCart += 1;
             quantitycount.innerText = products[i].inCart;
         }
         subTotal += products[i].price;
