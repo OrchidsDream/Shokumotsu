@@ -138,6 +138,10 @@ ul {
     padding-top: 10px;
 }
 
+#checkouttitle {
+    margin-bottom: 0px;
+}
+
 .cartbutton {
     font-family: sans-serif;
     font-size: 15px;
@@ -147,6 +151,9 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;   
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .mula {
@@ -163,7 +170,7 @@ ul {
     width: 90%;
     height: 150px;
     border: 1px solid rgba(0, 0, 0, 0.788);
-    margin: 10px auto;
+    margin: 15px auto;
     padding: 7px 15px;
 }
 
