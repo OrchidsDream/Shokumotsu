@@ -125,7 +125,7 @@ ul {
     margin-top: 15px;
 }
 
-.form2, .form3 {
+.form2{
     width: 80vw;
     font-family: sans-serif; 
     font-size:  25px; 
@@ -152,22 +152,45 @@ ul {
 .mula {
     display: flex;
     justify-content: space-between;
+    margin-top: -10px;
+}
+
+.beforetotal {
+    font-size: 15px;
 }
 
 .itemcheckout {
     width: 90%;
     height: 150px;
     border: 1px solid rgba(0, 0, 0, 0.788);
-    margin: 0 auto;
-    margin-top: 10px;
+    margin: 10px auto;
+    padding: 7px 15px;
+}
+
+.namecheckout {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .imagecheckout {
-    width: 100px;
-    height: 80px;
+    width: 80px;
+    height: 55px;
     box-shadow: none;
     margin: 0;
     border: 1px solid rgba(0, 0, 0, 0.788);
+}
+
+.emptydiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantitycheckout {
+    font-size: 15px;
+    display: flex;
+    margin-top: 16px;
+    column-gap: 5px;
+    font-weight: lighter;
 }
 
 .minusplusbuttons {

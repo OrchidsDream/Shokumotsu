@@ -101,25 +101,23 @@
 
     <form class="row g-3 form2">
       <h2>Checkout</h2> 
-        
-            <div class="currency">
-                <div class="mula"> 
-                  <p>total</p>
-                  <p class="money">money</p> 
-                </div>
-                <div class="mula"> 
-                  <p> sales tax</p>
-                  <p class="money">money</p> 
-                </div>
-                <div class="mula"> 
-                  <p> grand total</p>
-                  <p class="money">money</p> 
-                </div> 
-            </div>
-            <div>
-              <button type="button" class="btn btn-primary">Credit/Debit</button>
-              <button type="button" class="btn btn-success">Cash</button>
-            </div>
+      <div id="emptyitem"></div>
+        <div class="currency">
+          <div class="mula beforetotal"> 
+            <p>Subtotal...</p>
+            <p class="money" id="subtotal">$0.00</p> 
+          </div>
+          <div class="mula beforetotal"> 
+            <p>Sales tax (6%)...</p>
+            <p class="money" id="salestax">$0.00</p> 
+          </div>
+          <div class="mula"> 
+            <p>Total...</p>
+            <p class="money" id="grandtotal">$0.00</p> 
+          </div> 
+        </div>
+        <button type="button" class="btn btn-primary">Credit/Debit</button>
+        <button type="button" class="btn btn-success">Cash</button>
         <div class="row">
           <div class="col">
             <label for="firstname" class="form-label">First Name</label>

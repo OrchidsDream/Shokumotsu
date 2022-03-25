@@ -1,3 +1,5 @@
+
+
 let products = [
     {
         "name": "Hamburger",
@@ -131,8 +133,11 @@ menubuttons.forEach(function(buttons){
 
 let cartbuttons = document.querySelectorAll(".cartbutton");
 
+/* debugger; */
 
 let subTotal = 0;
+let grandTotal = 0;
+let salesTax = 0;
 let quantitycount = document.createElement("p");
 
 for (let i = 0; i < cartbuttons.length; i++) {
@@ -145,14 +150,20 @@ for (let i = 0; i < cartbuttons.length; i++) {
             if (products[i].inCart === 0) {
                 products[i].inCart += 1;
             }
+
             shownProduct(products[i]);
-            let itemcheckout = document.createElement("div")
-            itemcheckout.classList.add("itemcheckout")
-            document.querySelector(".form2").append(itemcheckout)
+            let itemcheckout = document.createElement("div");
+            itemcheckout.classList.add("itemcheckout");
+            document.querySelector("#emptyitem").append(itemcheckout);
+            
+            let emptydiv = document.createElement("div");
+            emptydiv.classList.add("emptydiv");
+            itemcheckout.appendChild(emptydiv);
             
             let namecheckout = document.createElement("h3");
+            namecheckout.classList.add("namecheckout")
             namecheckout.innerText = `${products[i].name} | $${products[i].price}`;
-            itemcheckout.appendChild(namecheckout);
+            emptydiv.appendChild(namecheckout);
             
             let image = document.createElement("img");
             image.setAttribute("src", products[i].pictureLink);
@@ -161,22 +172,23 @@ for (let i = 0; i < cartbuttons.length; i++) {
             
             let quantitycheckout = document.createElement("div");
             quantitycheckout.innerText = `Quantity`;
+            quantitycheckout.classList.add("quantitycheckout");
             itemcheckout.append(quantitycheckout);
     
             quantitycount.classList.add("quantitycount")
             quantitycount.innerText = products[i].inCart;
-            itemcheckout.appendChild(quantitycount)
-    
+            
             let minusbutton = document.createElement("button");
             let plusbutton = document.createElement("button");
             minusbutton.classList.add("minusplusbuttons");
             plusbutton.classList.add("minusplusbuttons");
             quantitycheckout.appendChild(minusbutton)
+            quantitycheckout.appendChild(quantitycount);
             quantitycheckout.appendChild(plusbutton)
             
             let exitbutton = document.createElement("button");
             exitbutton.classList.add("exitbutton")
-            namecheckout.appendChild(exitbutton)
+            emptydiv.appendChild(exitbutton)
 
             // let exitbutton = document.createElement("button");
             // exitbutton.className = 'fa fa-smile-o';
@@ -188,9 +200,18 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 quantitycount.innerText = products[i].inCart;
                 console.log(products[i].inCart)
                 subTotal += products[i].price;
+                subTotal = Math.round(100 * subTotal)/100;
                 console.log(subTotal);
+                document.querySelector("#subtotal").innerText = `$${subTotal}`;
+                salesTax = subTotal * .06;
+                salesTax = Math.round(100 * salesTax)/100;
+                document.querySelector("#salestax").innerText = `$${salesTax}`;
+                grandTotal = subTotal + salesTax;
+                grandTotal = Math.round(100 * grandTotal)/100;
+                document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
             })
             
+
             minusbutton.addEventListener("click", (e) => {
                 e.preventDefault();
                 if(products[i].inCart > 0) {
@@ -198,31 +219,58 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 }
                 quantitycount.innerText = products[i].inCart;
                 console.log(products[i].inCart)
-                if (subTotal > products[i].price){
+                if (subTotal >= products[i].price){
                     subTotal -= products[i].price;
+                    subTotal = Math.round(100 * subTotal)/100;
                     console.log(subTotal);
                 }
                 if (products[i].inCart <= 0) {
                     itemcheckout.remove();
                     products[i].display = false;
                 }
+                document.querySelector("#subtotal").innerText = `$${subTotal}`;
+                salesTax = subTotal * .06;
+                salesTax = Math.round(100 * salesTax)/100;
+                document.querySelector("#salestax").innerText = `$${salesTax}`;
+                grandTotal = subTotal + salesTax;
+                grandTotal = Math.round(100 * grandTotal)/100;
+                document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
             })
             
             exitbutton.addEventListener("click", (e) => {
                 e.preventDefault();
                 itemcheckout.remove()
                 subTotal -= products[i].inCart * products[i].price;
+                subTotal = Math.round(100 * subTotal)/100;
                 products[i].inCart = 0;
                 products[i].display = false;
                 console.log(subTotal);
+                document.querySelector("#subtotal").innerText = `$${subTotal}`;
+                salesTax = subTotal * .06;
+                salesTax = Math.round(100 * salesTax)/100;
+                document.querySelector("#salestax").innerText = `$${salesTax}`;
+                grandTotal = subTotal + salesTax;
+                grandTotal = Math.round(100 * grandTotal)/100;
+                document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
             })
+            subTotal += products[i].price;
+            subTotal = Math.round(100 * subTotal)/100;
+            console.log(subTotal);
+            document.querySelector("#subtotal").innerText = `$${subTotal}`
         } else if (products[i].display === true) {
             subTotal += products[i].price;
+            subTotal = Math.round(100 * subTotal)/100;
             products[i].inCart += 1;
             quantitycount.innerText = products[i].inCart;
+            console.log(subTotal);
         }
-        subTotal += products[i].price;
-        console.log(subTotal)
+        document.querySelector("#subtotal").innerText = `$${subTotal}`;
+        salesTax = subTotal * .06;
+        salesTax = Math.round(100 * salesTax)/100;
+        document.querySelector("#salestax").innerText = `$${salesTax}`;
+        grandTotal = subTotal + salesTax;
+        grandTotal = Math.round(100 * grandTotal)/100;
+        document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
     })
 }
 
