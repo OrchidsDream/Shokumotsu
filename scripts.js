@@ -207,13 +207,13 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 subTotal += products[i].price;
                 subTotal = Math.round(100 * subTotal)/100;
                 console.log(subTotal);
-                document.querySelector("#subtotal").innerText = `$${subTotal}`;
+                document.querySelector("#subtotal").innerText = `$${subTotal.toFixed(2)}`;
                 salesTax = subTotal * .06;
                 salesTax = Math.round(100 * salesTax)/100;
-                document.querySelector("#salestax").innerText = `$${salesTax}`;
+                document.querySelector("#salestax").innerText = `$${salesTax.toFixed(2)}`;
                 grandTotal = subTotal + salesTax;
                 grandTotal = Math.round(100 * grandTotal)/100;
-                document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
+                document.querySelector("#grandtotal").innerText = `$${grandTotal.toFixed(2)}`;
                 e.stopPropagation();
             })
             
@@ -234,13 +234,13 @@ for (let i = 0; i < cartbuttons.length; i++) {
                     itemcheckout.remove();
                     products[i].display = false;
                 }
-                document.querySelector("#subtotal").innerText = `$${subTotal}`;
+                document.querySelector("#subtotal").innerText = `$${subTotal.toFixed(2)}`;
                 salesTax = subTotal * .06;
                 salesTax = Math.round(100 * salesTax)/100;
-                document.querySelector("#salestax").innerText = `$${salesTax}`;
+                document.querySelector("#salestax").innerText = `$${salesTax.toFixed(2)}`;
                 grandTotal = subTotal + salesTax;
                 grandTotal = Math.round(100 * grandTotal)/100;
-                document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
+                document.querySelector("#grandtotal").innerText = `$${grandTotal.toFixed(2)}`;
                 e.stopPropagation();
             })
             
@@ -252,19 +252,19 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 products[i].inCart = 0;
                 products[i].display = false;
                 console.log(subTotal);
-                document.querySelector("#subtotal").innerText = `$${subTotal}`;
+                document.querySelector("#subtotal").innerText = `$${subTotal.toFixed(2)}`;
                 salesTax = subTotal * .06;
                 salesTax = Math.round(100 * salesTax)/100;
-                document.querySelector("#salestax").innerText = `$${salesTax}`;
+                document.querySelector("#salestax").innerText = `$${salesTax.toFixed(2)}`;
                 grandTotal = subTotal + salesTax;
                 grandTotal = Math.round(100 * grandTotal)/100;
-                document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
+                document.querySelector("#grandtotal").innerText = `$${grandTotal.toFixed(2)}`;
                 e.stopPropagation();
             })
             subTotal += products[i].price;
             subTotal = Math.round(100 * subTotal)/100;
             console.log(subTotal);
-            document.querySelector("#subtotal").innerText = `$${subTotal}`
+            document.querySelector("#subtotal").innerText = `$${subTotal.toFixed(2)}`
         } else if (products[i].display === true) {
             subTotal += products[i].price;
             subTotal = Math.round(100 * subTotal)/100;
@@ -272,13 +272,13 @@ for (let i = 0; i < cartbuttons.length; i++) {
             quantitycount.innerText = products[i].inCart;
             console.log(subTotal);
         }
-        document.querySelector("#subtotal").innerText = `$${subTotal}`;
+        document.querySelector("#subtotal").innerText = `$${subTotal.toFixed(2)}`;
         salesTax = subTotal * .06;
         salesTax = Math.round(100 * salesTax)/100;
-        document.querySelector("#salestax").innerText = `$${salesTax}`;
+        document.querySelector("#salestax").innerText = `$${salesTax.toFixed(2)}`;
         grandTotal = subTotal + salesTax;
         grandTotal = Math.round(100 * grandTotal)/100;
-        document.querySelector("#grandtotal").innerText = `$${grandTotal}`;
+        document.querySelector("#grandtotal").innerText = `$${grandTotal.toFixed(2)}`;
         e.stopPropagation();
     })
 }
