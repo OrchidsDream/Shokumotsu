@@ -182,6 +182,24 @@ for (let i = 0; i < cartbuttons.length; i++) {
             let quantitycount = document.createElement("p");
             quantitycount.classList.add("quantitycount")
             quantitycount.innerText = products[i].inCart;
+
+            let tablebody = document.querySelector("tbody");
+            let tablerow = document.createElement("tr");
+            let tablename = document.createElement("td");
+            let tablequantity = document.createElement("td");
+            let tableprice = document.createElement("td");
+            let tabletotal = document.createElement("td");
+
+            tablename.innerText = products[i].name;
+            tablequantity.innerText = products[i].inCart;
+            tableprice.innerText = `$${products[i].price}`;
+            tabletotal.innerText = `$${products[i].price * products[i].inCart}`;
+
+            tablebody.appendChild(tablerow);
+            tablerow.appendChild(tablename);
+            tablerow.appendChild(tablequantity);
+            tablerow.appendChild(tableprice);
+            tablerow.appendChild(tabletotal);
             
             let minusbutton = document.createElement("button");
             let plusbutton = document.createElement("button");
