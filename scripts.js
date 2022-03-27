@@ -142,7 +142,6 @@ let cartbuttons = document.querySelectorAll(".cartbutton");
 let subTotal = 0;
 let grandTotal = 0;
 let salesTax = 0;
-let quantitycount = document.createElement("p");
 
 for (let i = 0; i < cartbuttons.length; i++) {
     cartbuttons[i].addEventListener("click", (e) => {
@@ -179,7 +178,8 @@ for (let i = 0; i < cartbuttons.length; i++) {
             quantitycheckout.innerText = `Quantity`;
             quantitycheckout.classList.add("quantitycheckout");
             itemcheckout.append(quantitycheckout);
-    
+            
+            let quantitycount = document.createElement("p");
             quantitycount.classList.add("quantitycount")
             quantitycount.innerText = products[i].inCart;
             
@@ -300,11 +300,3 @@ cash.addEventListener("click", function(){
 function shownProduct(product) {
     console.log("My product is", product)
 }
-
-// cartbuttons.forEach(function(buttons){
-    //     buttons.addEventListener("click", function(e){
-        //         e.preventDefault();
-        //     });
-        // });
-        
-        
