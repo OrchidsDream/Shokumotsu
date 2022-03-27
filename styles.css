@@ -221,6 +221,7 @@ ul {
 
 .cashordebit {
     width: 50%;
+    height: 50px;
 }
 
 .showdark {
@@ -233,6 +234,39 @@ ul {
 
 .cashhide {
     display: none;
+}
+
+.receipt {
+    display: none;
+    width: 50vw;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px black;
+    border: 1px solid rgba(0, 0, 0, 0.788);
+    background-color: white;
+    top: 20px;
+    position: fixed;
+}
+
+.receiptshow {
+    margin: 0 auto;
+    display: block;
+}
+
+.bodydark {
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.529);
+    position: fixed;
+}
+
+.bodydarkshow {
+    display: block;
 }
 
 @media only screen and (min-width: 768px) {

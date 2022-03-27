@@ -15,6 +15,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
+  <div class="bodydark"></div>
   <body>
     <header>
       <h1>Shokumotsu</h1>
@@ -130,7 +131,7 @@
           </div>
         </div>
         
-      <form class="cashhide">
+      <div id="debitform">
         <div class="col-12">
           <label for="inputAddress" class="form-label">Address</label>
           <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
@@ -223,16 +224,33 @@
         <div class="col-12">
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Checkout</button>
+          <button type="submit" id="checkout" class="btn btn-primary">Checkout</button>
         </div>
-      </form>
+      </div>
           
     </form>
         
             
         </section>   
               
-        
+  <section id="receipt" class="receipt">
+    <h1 id="thanks">THANKS FOR VISITING!</h1>
+    <div class="currencyreceipt">
+      <div class="mula beforetotal"> 
+        <p>Subtotal...</p>
+        <p class="money" id="subtotal">$0.00</p> 
+      </div>
+      <div class="mula beforetotal"> 
+        <p>Sales tax (6%)...</p>
+        <p class="money" id="salestax">$0.00</p> 
+      </div>
+      <div class="mula"> 
+        <p>Total...</p>
+        <p class="money" id="grandtotal">$0.00</p> 
+      </div> 
+    </div>
+
+  </section>
             
     <script src="scripts.js"></script>
   </body>

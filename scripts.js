@@ -285,7 +285,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
 
 let debit = document.querySelector("#debit");
 let cash = document.querySelector("#cash");
-let debitform = document.querySelector("#cashhide")
+let debitform = document.querySelector("#debitform")
 
 debit.addEventListener("click", function(){
     debit.classList.add("showdark");
@@ -297,7 +297,16 @@ cash.addEventListener("click", function(){
     cash.classList.add("showdark");
     debit.classList.remove("showdark");
     debitform.classList.add("cashhide")
+})
 
+let checkout = document.querySelector("#checkout");
+let receipt = document.querySelector("#receipt");
+
+checkout.addEventListener("click", function(e){
+    e.preventDefault();
+    document.querySelector(".bodydark").classList.add("bodydarkshow");
+    receipt.classList.add("receiptshow");
+    document.querySelector("#thanks").innerText = `Thank you, ${document.querySelector("#firstname").value} ${document.querySelector("#lastname").value}`
 })
 
 
