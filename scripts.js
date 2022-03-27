@@ -285,7 +285,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
 
 let debit = document.querySelector("#debit");
 let cash = document.querySelector("#cash");
-let debitform = document.querySelector("#cashhide")
+let debitform = document.querySelector("#debitform")
 
 debit.addEventListener("click", function(){
     debit.classList.add("showdark");
