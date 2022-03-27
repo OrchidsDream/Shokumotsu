@@ -285,15 +285,19 @@ for (let i = 0; i < cartbuttons.length; i++) {
 
 let debit = document.querySelector("#debit");
 let cash = document.querySelector("#cash");
+let debitform = document.querySelector("#cashhide")
 
 debit.addEventListener("click", function(){
     debit.classList.add("showdark");
     cash.classList.remove("showdark");
+    debitform.classList.remove("cashhide")
 })
 
 cash.addEventListener("click", function(){
     cash.classList.add("showdark");
     debit.classList.remove("showdark");
+    debitform.classList.add("cashhide")
+
 })
 
 
