@@ -300,13 +300,12 @@ cash.addEventListener("click", function(){
 })
 
 let checkout = document.querySelector("#checkout");
-let receipt = document.querySelector("#receipt");
+let receipt = document.querySelector(".receipt");
 
 checkout.addEventListener("click", function(e){
     e.preventDefault();
     document.querySelector(".bodydark").classList.add("bodydarkshow");
     receipt.classList.add("receiptshow");
-    document.querySelector("#thanks").innerText = `Thank you, ${document.querySelector("#firstname").value} ${document.querySelector("#lastname").value}`
 })
 
 
