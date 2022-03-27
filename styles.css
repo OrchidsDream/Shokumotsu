@@ -211,6 +211,22 @@ ul {
     background-color: red;
 }
 
+#cashordebit {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.cashordebit {
+    width: 50%;
+}
+
+.showdark {
+    background-color:rgba(0, 0, 0, 0.329);
+}
+
 @media only screen and (min-width: 768px) {
     #body {
         display: flex;
