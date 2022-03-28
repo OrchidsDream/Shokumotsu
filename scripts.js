@@ -154,7 +154,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
             if (products[i].inCart === 0) {
                 products[i].inCart += 1;
             }
-
+            
             let itemcheckout = document.createElement("div");
             itemcheckout.classList.add("itemcheckout");
             document.querySelector("#emptyitem").append(itemcheckout);
