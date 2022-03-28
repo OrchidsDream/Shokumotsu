@@ -356,7 +356,7 @@ checkout.addEventListener("click", function(e){
     } else if (grandTotal > 0 && isItShowing === false) {
         e.preventDefault();
         document.querySelector(".bodydark").classList.add("bodydarkshow");
-        receipt.querySelector("h4").innerText = `Thank you, ${document.querySelector("#firstname").value}. Your change is $${(Math.round(100*(cashamount.value - grandTotal))/100).toFixed(2)}.`;
+        receipt.querySelector("h4").innerText = `Thank you, ${document.querySelector("#firstname").value} Your change is $${(Math.round(100*(cashamount.value - grandTotal))/100).toFixed(2)}.`;
         receipt.classList.add("receiptshow");
     }
 });
