@@ -189,12 +189,10 @@ for (let i = 0; i < cartbuttons.length; i++) {
             let tableprice = document.createElement("td");
             let tabletotal = document.createElement("td");
 
-            let receipttotal = document.querySelector("#receiptgrandtotal");
-
             tablename.innerText = products[i].name;
             tablequantity.innerText = products[i].inCart;
             tableprice.innerText = `$${(Math.round(100*products[i].price)/100).toFixed(2)}`;
-                tabletotal.innerText = `$${(Math.round(100*(products[i].price * products[i].inCart)/100).toFixed(2))}`;
+            tabletotal.innerText = `$${(Math.round(100*(products[i].price * products[i].inCart)/100).toFixed(2))}`;
 
             tablebody.appendChild(tablerow);
             tablerow.appendChild(tablename);
@@ -222,7 +220,6 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 console.log(products[i].inCart)
                 subTotal += products[i].price;
                 subTotal = Math.round(100 * subTotal)/100;
-                console.log(subTotal);
                 document.querySelector("#subtotal").innerText = `$${subTotal.toFixed(2)}`;
                 salesTax = subTotal * .06;
                 salesTax = Math.round(100 * salesTax)/100;
@@ -236,6 +233,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 tabletotal.innerText = `$${(Math.round(100*(products[i].price * products[i].inCart)/100).toFixed(2))}`;
                 receipttotal.innerText = `$${grandTotal.toFixed(2)}`
                 e.stopPropagation();
+                return grandTotal;
             })
             
 
@@ -249,7 +247,6 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 if (subTotal >= products[i].price){
                     subTotal -= products[i].price;
                     subTotal = Math.round(100 * subTotal)/100;
-                    console.log(subTotal);
                 }
                 if (products[i].inCart <= 0) {
                     itemcheckout.remove();
@@ -269,6 +266,7 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 tableprice.innerText = `$${(Math.round(100*products[i].price)/100).toFixed(2)}`;
                 tabletotal.innerText = `$${(Math.round(100*(products[i].price * products[i].inCart)/100).toFixed(2))}`;
                 receipttotal.innerText = `$${grandTotal.toFixed(2)}`
+                return grandTotal;
             })
             
             exitbutton.addEventListener("click", (e) => {
@@ -278,7 +276,6 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 subTotal = Math.round(100 * subTotal)/100;
                 products[i].inCart = 0;
                 products[i].display = false;
-                console.log(subTotal);
                 document.querySelector("#subtotal").innerText = `$${subTotal.toFixed(2)}`;
                 salesTax = subTotal * .06;
                 salesTax = Math.round(100 * salesTax)/100;
@@ -289,17 +286,16 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 receipttotal.innerText = `$${grandTotal.toFixed(2)}`
                 e.stopPropagation();
                 tablerow.remove();
+                return grandTotal;
             })
             subTotal += products[i].price;
             subTotal = Math.round(100 * subTotal)/100;
-            console.log(subTotal);
             document.querySelector("#subtotal").innerText = `$${subTotal.toFixed(2)}`
         } else if (products[i].display === true) {
             subTotal += products[i].price;
             subTotal = Math.round(100 * subTotal)/100;
             products[i].inCart += 1;
             quantitycount.innerText = products[i].inCart;
-            console.log(subTotal);
             tablename.innerText = products[i].name;
             tablequantity.innerText = products[i].inCart;
             tableprice.innerText = `$${(Math.round(100*products[i].price)/100).toFixed(2)}`;
@@ -312,23 +308,27 @@ for (let i = 0; i < cartbuttons.length; i++) {
         grandTotal = subTotal + salesTax;
         grandTotal = Math.round(100 * grandTotal)/100;
         document.querySelector("#grandtotal").innerText = `$${grandTotal.toFixed(2)}`;
+        let receipttotal = document.getElementById("receiptgrandtotal");
         receipttotal.innerText = `$${grandTotal.toFixed(2)}`
         e.stopPropagation();
+        return grandTotal;
         
     })
 }
 
 let debit = document.querySelector("#debit");
 let cash = document.querySelector("#cash");
-let debitform = document.querySelector("#debitform");
+let debitform = document.getElementById("debitform");
 let cashform = document.querySelector(".cashform");
 
+let isItShowing = true;
 
 debit.addEventListener("click", function(){
     debit.classList.add("showdark");
     cash.classList.remove("showdark");
     debitform.classList.remove("cashhide");
     cashform.classList.remove("cashshow");
+    isItShowing = true;
 })
 
 cash.addEventListener("click", function(){
@@ -336,16 +336,27 @@ cash.addEventListener("click", function(){
     debit.classList.remove("showdark");
     debitform.classList.add("cashhide");
     cashform.classList.add("cashshow");
+    isItShowing = false;
 })
 
 let checkout = document.querySelector("#checkout");
 let receipt = document.querySelector(".receipt");
 
-let cashamount = document.querySelector("#cashamount");
-let change = document.querySelector("#change");
+var cashamount = document.getElementById("cashamount");
 
 checkout.addEventListener("click", function(e){
-    e.preventDefault();
-    document.querySelector(".bodydark").classList.add("bodydarkshow");
-    receipt.classList.add("receiptshow");
-})
+    if (grandTotal === 0) {
+        e.preventDefault();
+        alert("THE BUSINESS CAN'T RUN UNLESS YOU BUY SOME STUFF. PLEASE GO BACK AND BUY OUR PRODUCTS.");
+    } else if (grandTotal > 0 && isItShowing === true) {
+        e.preventDefault();
+        document.querySelector(".bodydark").classList.add("bodydarkshow");
+        receipt.querySelector("h4").innerText = `Thank you, ${document.querySelector("#firstname").value}. Now here's your receipt.`;
+        receipt.classList.add("receiptshow");
+    } else if (grandTotal > 0 && isItShowing === false) {
+        e.preventDefault();
+        document.querySelector(".bodydark").classList.add("bodydarkshow");
+        receipt.querySelector("h4").innerText = `Thank you, ${document.querySelector("#firstname").value}. Your change is $${(Math.round(100*(cashamount.value - grandTotal))/100).toFixed(2)}.`;
+        receipt.classList.add("receiptshow");
+    }
+});

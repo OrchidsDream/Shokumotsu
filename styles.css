@@ -226,6 +226,10 @@ ul {
     margin-bottom: 15px;
 }
 
+#spacing {
+    margin-top: 20px;
+}
+
 .cashform {
     display: none;
 }
@@ -238,16 +242,38 @@ ul {
     display: block;
 }
 
+#checkout {
+    display: block;
+    margin: 30px auto;
+    width: 75%;
+    height: 70px;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
 .receipt {
     display: none;
-    width: 50vw;
+    width: 90vw;
     height: 500px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px black;
     border: 1px solid rgba(0, 0, 0, 0.788);
     background-color: white;
-    top: 20px;
+    top: 18%;
     position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h4 {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.bold {
+    font-weight: 800;
 }
 
 .receiptshow {
@@ -291,5 +317,9 @@ ul {
 
     .foodchoices {
         width: 85%;
+    }
+
+    .receipt {
+        width: 50vw;
     }
 }

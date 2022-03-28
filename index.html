@@ -123,13 +123,13 @@
           </button>
           <button class="cashordebit" id="cash" type="button">Cash</button>
         </div>
-        <div class="row">
+        <div class="row" id="spacing">
           <div class="col">
             <label for="firstname" class="form-label">First Name</label>
             <input
               type="text"
               id="firstname"
-              class="form-control"
+              class="form-control requiredinput"
               placeholder="First name"
               aria-label="First name"
             />
@@ -139,7 +139,7 @@
             <input
               type="text"
               id="lastname"
-              class="form-control"
+              class="form-control requiredinput"
               placeholder="Last name"
               aria-label="Last name"
             />
@@ -151,7 +151,7 @@
             <label for="inputAddress" class="form-label">Address</label>
             <input
               type="text"
-              class="form-control"
+              class="form-control requiredinput"
               id="inputAddress"
               placeholder="1234 Main St"
             />
@@ -168,36 +168,40 @@
 
           <div class="row">
             <div class="col-md-6">
-              <label for="inputnameoncard" class="form-label">Card</label>
-              <input type="text" class="form-control" id="inputnameoncard" />
+              <label for="inputnameoncard" class="form-label">Card Number</label>
+              <input type="text" class="form-control requiredinput" id="inputnameoncard" />
             </div>
             <div class="col-md-4">
               <label for="inputnameoncard" class="form-label">Zip</label>
               <input
                 type="number"
                 min="0"
-                class="form-control"
+                class="form-control requiredinput"
                 id="inputnameoncard"
               />
             </div>
             <div class="col-md-2">
               <label for="inputZip" class="form-label">CVV</label>
-              <input type="number" min="0" class="form-control" id="inputZip" />
+              <input type="number" min="0" class="form-control requiredinput" id="inputZip" />
             </div>
             <div class="col-md-6">
               <label for="inputnameoncard" class="form-label"
                 >Name on Card</label
               >
-              <input type="text" class="form-control" id="inputnameoncard" />
+              <input type="text" class="form-control requiredinput" id="inputnameoncard" />
+            </div>
+            <div class="col-md-6">
+              <label for="inputnameoncard" class="form-label">Expiration Date</label>
+              <input type="date" class="form-control requiredinput" id="inputnameoncard" />
             </div>
           </div>
           <div class="col-md-6">
             <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity" />
+            <input type="text" class="form-control requiredinput" id="inputCity" />
           </div>
           <div class="col-md-4">
             <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
+            <select id="inputState" class="form-select requiredinput">
               <option selected>Choose...</option>
               <option id="AL" value="AL">Alabama</option>
               <option id="AK" value="AK">Alaska</option>
@@ -257,11 +261,7 @@
         <div class="cashform">
           <div>
             <label for="cashamount">Enter amount you'll be spending:</label>
-            <input type="number" id="cashamount" min="0">
-          </div>
-          <div>
-            <p>Change Expected:</p>
-            <p id="change"></p>
+            <input type="number" id="cashamount" min="0" value="0">
           </div>
         </div>
         <div class="col-12">
@@ -271,6 +271,7 @@
     </section>
 
     <section class="receipt">
+      <h4></h4>
       <table class="table">
         <thead>
           <tr>
@@ -284,8 +285,8 @@
           <tr>
             <td></td>
             <td></td>
-            <td>Total</td>
-            <td id="receiptgrandtotal"></td>
+            <td class="bold">Total</td>
+            <td class="bold" id="receiptgrandtotal"></td>
           </tr>
         </tbody>
       </table>
