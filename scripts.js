@@ -193,8 +193,8 @@ for (let i = 0; i < cartbuttons.length; i++) {
 
             tablename.innerText = products[i].name;
             tablequantity.innerText = products[i].inCart;
-            tableprice.innerText = `$${products[i].price}`;
-            tabletotal.innerText = `$${products[i].price * products[i].inCart}`;
+            tableprice.innerText = `$${(Math.round(100*products[i].price)/100).toFixed(2)}`;
+                tabletotal.innerText = `$${(Math.round(100*(products[i].price * products[i].inCart)/100).toFixed(2))}`;
 
             tablebody.appendChild(tablerow);
             tablerow.appendChild(tablename);
@@ -232,8 +232,8 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 document.querySelector("#grandtotal").innerText = `$${grandTotal.toFixed(2)}`;
                 tablename.innerText = products[i].name;
                 tablequantity.innerText = products[i].inCart;
-                tableprice.innerText = `$${products[i].price}`;
-                tabletotal.innerText = `$${products[i].price * products[i].inCart}`;
+                tableprice.innerText = `$${(Math.round(100*products[i].price)/100).toFixed(2)}`;
+                tabletotal.innerText = `$${(Math.round(100*(products[i].price * products[i].inCart)/100).toFixed(2))}`;
                 receipttotal.innerText = `$${grandTotal.toFixed(2)}`
                 e.stopPropagation();
             })
@@ -266,8 +266,8 @@ for (let i = 0; i < cartbuttons.length; i++) {
                 e.stopPropagation();
                 tablename.innerText = products[i].name;
                 tablequantity.innerText = products[i].inCart;
-                tableprice.innerText = `$${products[i].price}`;
-                tabletotal.innerText = `$${products[i].price * products[i].inCart}`;
+                tableprice.innerText = `$${(Math.round(100*products[i].price)/100).toFixed(2)}`;
+                tabletotal.innerText = `$${(Math.round(100*(products[i].price * products[i].inCart)/100).toFixed(2))}`;
                 receipttotal.innerText = `$${grandTotal.toFixed(2)}`
             })
             
@@ -302,8 +302,8 @@ for (let i = 0; i < cartbuttons.length; i++) {
             console.log(subTotal);
             tablename.innerText = products[i].name;
             tablequantity.innerText = products[i].inCart;
-            tableprice.innerText = `$${products[i].price}`;
-            tabletotal.innerText = `$${products[i].price * products[i].inCart}`;
+            tableprice.innerText = `$${(Math.round(100*products[i].price)/100).toFixed(2)}`;
+            tabletotal.innerText = `$${(Math.round(100*(products[i].price * products[i].inCart)/100).toFixed(2))}`;
         }
         document.querySelector("#subtotal").innerText = `$${subTotal.toFixed(2)}`;
         salesTax = subTotal * .06;
